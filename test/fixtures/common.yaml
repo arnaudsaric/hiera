@@ -1,0 +1,14 @@
+---
+b: 5
+f: %{hostname}
+g: %{a}%{b}.txt
+h: %{i}
+i: %{h}
+arraya:
+        - 1
+        - 2
+        - 3
+arrayb:
+        - %{d}
+        - 2
+hasha: {toto: 42, titi: "%{f}"}

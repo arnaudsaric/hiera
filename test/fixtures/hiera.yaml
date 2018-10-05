@@ -1,0 +1,14 @@
+---
+defaults:
+  datadir: /home/arnaud/prg/elixir/puppet/apps/hiera/test/fixtures
+  data_hash: yaml
+hierarchy:
+  - name: "Per-node data"
+    path: "hosts/%{hostname}.json"
+    data_hash: json
+  - name: "OS-specific data"
+    globs: ["osfamily/%{osfamily}.yaml","osfamil/%{osfamily}.yaml"]
+  - name: "Associated classes"
+    mapped_paths: [topclasses, tmp, "osfamily/%{osfamily}/%{tmp}.yaml"]
+  - name: "Common data"
+    glob: "*comm{on,}.yaml"
